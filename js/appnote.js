@@ -4,7 +4,7 @@ let cards = document.querySelector('#cards')
 let addnowButtum = document.querySelector('#button')
 
 addnowButtum.addEventListener('click', function(e) {
-  if(title.value.trim().length < 1&& textArea.value.trim().length < 1) {
+  if(title.value.trim().length < 1 && textArea.value.trim().length < 1) {
      alert('filed the input')
      return false
   } 
@@ -32,7 +32,7 @@ addnowButtum.addEventListener('click', function(e) {
   cardbody.appendChild(textbody)
   
   let element = document.createElement('a')
-  element.className = 'card-link'
+  element.className = 'card-link '
   element.innerHTML = `<i class="material-icons"> delete_forever </i>`
   cardbody.appendChild(element)
 

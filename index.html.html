@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="scss/mai.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <title>Note Pade</title>
+</head>
+<body class="flax" >
+    <div class="container">
+        <form>
+
+            <div class="form-group">
+                <input class="form-control form-control-lg mb-2" id="title" placeholder="note title">
+                <textarea class="form-control " id="text-body" rows="10">
+
+                </textarea>
+            </div>
+        </form>
+        <div class="flax text-center">
+            <button id="button" class="btn btn-primary">Add Now</button>
+        </div>
+        <!-- card section -->
+        <div class="d-flax mt-4 ">
+            <div class="row" id="cards">
+               
+            </div>
+        </div>
+          
+    </div>
+
+    <!-- javascript app -->
+    <script src="js/note.js"></script>
+</body>
+</html>

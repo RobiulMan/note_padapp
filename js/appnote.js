@@ -31,7 +31,12 @@ addnowButtum.addEventListener('click', function(e) {
   textbody.appendChild(document.createTextNode(textArea.value.slice(0, 150)))
   cardbody.appendChild(textbody)
   
-  cardbody.appendChild()
+  let element = document.createElement('a')
+  element.className = 'card-link'
+  element.innerHTML = `<i class="material-icons"> delete_forever </i>`
+  cardbody.appendChild(element)
+
+  
   
   //after add value to reset input filed
   title.value = ''
@@ -42,9 +47,4 @@ addnowButtum.addEventListener('click', function(e) {
   
 })
 
-const elemeltCreater = (elementName, clsNames) => {
-  let element = document.createElement(elementName)
-  element.className = 'card-link'
-  return element.innerHTML = `<i class="material-icons"> ${clsNames} </i>`
-  
-}
+

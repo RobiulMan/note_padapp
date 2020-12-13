@@ -34,6 +34,7 @@ addnowButtum.addEventListener('click', function(e) {
   //dot icons insert after body text
   textbody.insertAdjacentHTML('beforeend', `<i class="material-icons align-middle"> more_horiz </i>`)
   
+<<<<<<< HEAD
   let removeElement = document.createElement('a')
   removeElement.className = 'card-link '
   removeElement.setAttribute('id','rmv')
@@ -46,6 +47,12 @@ addnowButtum.addEventListener('click', function(e) {
   privewElement.setAttribute('id','rmv')
   privewElement.innerHTML = `<i class="material-icons"> wysiwyg </i>`
   cardbody.appendChild(privewElement)
+=======
+  let element = document.createElement('a')
+  element.className = 'card-link '
+  element.innerHTML = `<i class="material-icons"> delete_forever </i>`
+  cardbody.appendChild(element)
+>>>>>>> 07d3141ab12d6d07ff21a5d751b53106ca5474a0
 
   
   // more_horiz

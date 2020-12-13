@@ -3,6 +3,13 @@ let textArea = document.querySelector('#text-body')
 let cards = document.querySelector('#cards')
 let addnowButtum = document.querySelector('#button')
 
+
+//modal 
+let modalTitle = document.querySelector('.modal-title')
+let modalbody = document.querySelector('.modal-body')
+
+
+
 addnowButtum.addEventListener('click', function(e) {
   if(title.value.trim().length < 1 && textArea.value.trim().length < 1) {
      alert('filed the input')
@@ -25,7 +32,7 @@ addnowButtum.addEventListener('click', function(e) {
   titles.appendChild(document.createTextNode(title.value))
   cardbody.appendChild(titles)
 
-  //datils text element 
+  //body text element 
   const textbody = document.createElement('p')
   textbody.className = 'card-text'
   textbody.appendChild(document.createTextNode(textArea.value.slice(0, 150)))
@@ -68,3 +75,5 @@ cards.addEventListener('click', function(e) {
   }
   
 })
+
+

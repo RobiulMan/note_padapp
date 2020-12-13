@@ -35,14 +35,14 @@ addnowButtum.addEventListener('click', function(e) {
   textbody.insertAdjacentHTML('beforeend', `<i class="material-icons align-middle"> more_horiz </i>`)
   
   let removeElement = document.createElement('a')
-  removeElement.className = 'card-link '
+  removeElement.className = 'card-link rmvs'
   removeElement.setAttribute('id','rmv')
-  removeElement.innerHTML = `<i class="material-icons"> delete_forever </i>`
+  removeElement.innerHTML = `<i class="material-icons " id="remove"> delete_forever </i>`
   cardbody.appendChild(removeElement)
 
 
   let privewElement = document.createElement('a')
-  privewElement.className = 'card-link '
+  privewElement.className = 'card-link'
   privewElement.setAttribute('id','rmv')
   privewElement.innerHTML = `<i class="material-icons"> wysiwyg </i>`
   cardbody.appendChild(privewElement)
@@ -60,9 +60,11 @@ addnowButtum.addEventListener('click', function(e) {
   
 })
 
-// console.log(cards.lastElementChild.previousElementSibling)
-// document.addEventListener('click', (e) => {
-//   if(e.target && e.target.id === 'rmv') {
-//     console.log()
-//   }
-// })
+//remove button action function
+cards.addEventListener('click', function(e) {
+  // console.log(e.target.id === 'remove')
+  if(e.target && e.target.id === 'remove') {
+    e.target.parentElement.parentElement.parentElement.remove()
+  }
+  
+})

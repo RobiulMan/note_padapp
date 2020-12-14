@@ -4,9 +4,9 @@ let cards = document.querySelector('#cards')
 let addnowButtum = document.querySelector('#button')
 
 
-//modal 
-let modalTitle = document.querySelector('.modal-title')
-let modalbody = document.querySelector('.modal-body')
+//modal box elemetn
+let modals = document.querySelector('.modals')
+
 
 
 
@@ -51,11 +51,11 @@ addnowButtum.addEventListener('click', function(e) {
   let privewElement = document.createElement('a')
   privewElement.className = 'card-link'
   privewElement.setAttribute('id','rmv')
-  privewElement.innerHTML = `<i class="material-icons"> wysiwyg </i>`
+  privewElement.innerHTML = `<i class="material-icons" id="privew"> wysiwyg </i>`
   cardbody.appendChild(privewElement)
 
   
-  // more_horiz
+
 
   
   //after add value to reset input filed
@@ -77,3 +77,63 @@ cards.addEventListener('click', function(e) {
 })
 
 
+//privew button action function
+cards.addEventListener('click', function(e) {
+  // console.log(e.target.id === 'remove')
+  if(e.target && e.target.id === 'privew') {
+
+    //modals continer
+    const box = document.createElement('div')
+    box.className = 'modal-dialog modal-dialog-centered'
+    modals.appendChild(box)
+
+    //modal content
+    const modalConten = document.createElement('div')
+    modalConten.className = 'modal-content'
+    box.appendChild(modalConten)
+
+    //modal Header
+    const modalHeader = document.createElement('div')
+    modalHeader.className = 'modal-header'
+    modalConten.appendChild(modalHeader)
+    
+    //modal Header content title
+    const modalHeaderTitle = document.createElement('input')
+    modalHeaderTitle.className = 'form-control'
+    modalHeaderTitle.setAttribute('id', 'box-title')
+    modalHeaderTitle.setAttribute('placeholder', 'Title of note')
+    modalHeader.appendChild(modalHeaderTitle)
+
+    //modal Header content close button
+    const modalHeaderClose = document.createElement('button')
+    modalHeaderClose.className = 'close'
+    modalHeaderClose.setAttribute('id', 'buttonClose')
+    modalHeaderClose.innerHTML = `<i class="material-icons" id="close"> cancel </i>`
+    modalHeader.appendChild(modalHeaderClose)
+    
+
+  }
+  
+})
+
+
+
+
+// <div class="modal-dialog modal-dialog-centered" >
+// <div class="modal-content">
+// <div class="modal-header">
+// <input class="form-control" id="box-title" placeholder="note title">
+// <button id="buttonClose" class="close" >
+// <span>&times;</span>
+// </button>
+// </div>
+// <div class="modal-body">
+// <textarea class="form-control " rows="10" id="modal-body">
+// </textarea>
+// </div>
+// <div class="modal-footer">
+// <button type="button" class="btn btn-secondary" id="cansee">Close</button>
+// <button type="button" class="btn btn-primary">Save changes</button>
+// </div>
+// </div>
+// </div>

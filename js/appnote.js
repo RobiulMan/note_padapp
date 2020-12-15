@@ -4,10 +4,9 @@ let cards = document.querySelector('#cards')
 let addnowButtum = document.querySelector('#button')
 
 
+
 //modal box elemetn
 let modals = document.querySelector('.modals')
-
-
 
 
 addnowButtum.addEventListener('click', function(e) {
@@ -15,6 +14,7 @@ addnowButtum.addEventListener('click', function(e) {
      alert('filed the input')
      return false
   } 
+  
   //card root  element 
   const card = document.createElement('div')
   card.className = 'card m-2'
@@ -58,7 +58,8 @@ addnowButtum.addEventListener('click', function(e) {
 
 
   
-  //after add value to reset input filed
+  
+  // //after add value to reset input filed
   title.value = ''
   textArea.value = ''
   // <a href="#" class="card-link">Card link</a>
@@ -81,7 +82,7 @@ cards.addEventListener('click', function(e) {
 cards.addEventListener('click', function(e) {
   // console.log(e.target.id === 'remove')
   if(e.target && e.target.id === 'privew') {
-
+    
     //modals continer
     const box = document.createElement('div')
     box.className = 'modal-dialog modal-dialog-centered'
@@ -102,6 +103,7 @@ cards.addEventListener('click', function(e) {
     modalHeaderTitle.className = 'form-control'
     modalHeaderTitle.setAttribute('id', 'box-title')
     modalHeaderTitle.setAttribute('placeholder', 'Title of note')
+    modalHeaderTitle.value = title.value
     modalHeader.appendChild(modalHeaderTitle)
 
     //modal Header content close button
@@ -111,13 +113,46 @@ cards.addEventListener('click', function(e) {
     modalHeaderClose.innerHTML = `<i class="material-icons" id="close"> cancel </i>`
     modalHeader.appendChild(modalHeaderClose)
     
+    //modal body content
+    const modalBodyCont = document.createElement('div')
+    modalBodyCont.className = 'modal-body'
+    modalConten.appendChild(modalBodyCont)
 
+    const modalTextArea = document.createElement('textarea')
+    modalTextArea.className = 'form-control'
+    modalTextArea.setAttribute('id', 'modal-body')
+    modalTextArea.setAttribute('rows','10')
+    modalTextArea.value = textArea.value
+    modalBodyCont.appendChild(modalTextArea)
+
+    //modal footer content
+    const modalFooterCont = document.createElement('div')
+    modalFooterCont.className = 'modal-footer'
+    modalConten.appendChild(modalFooterCont)
+
+    //modal footer Close button
+    const modalFooterBtnCancel  = document.createElement('button')
+    modalFooterBtnCancel.className = 'btn btn-secondary'
+    modalFooterBtnCancel.setAttribute('type', 'button')
+    modalFooterBtnCancel.setAttribute('id', 'cancel')
+    modalFooterBtnCancel.appendChild(document.createTextNode('Cancel'))
+
+    modalFooterCont.appendChild(modalFooterBtnCancel)
+
+    //modal footer Seave button 
+    const modalFooterBtnSave = document.createElement('button')
+    modalFooterBtnSave.className = 'btn btn-primary'
+    modalFooterBtnSave.setAttribute('type', 'button')
+    modalFooterBtnSave.setAttribute('id', 'save')
+    modalFooterBtnSave.appendChild(document.createTextNode('Save changes'))
+    modalFooterCont.appendChild(modalFooterBtnSave)
+
+    
+    e.preventDefault();
   }
+  // e.preventDefault()
   
 })
-
-
-
 
 // <div class="modal-dialog modal-dialog-centered" >
 // <div class="modal-content">

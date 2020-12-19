@@ -4,7 +4,6 @@ let cards = document.querySelector('#cards')
 let addnowButtum = document.querySelector('#button')
 
 
-
 //modal box elemetn
 let modals = document.querySelector('.modals')
 
@@ -14,6 +13,8 @@ addnowButtum.addEventListener('click', function(e) {
      alert('filed the input')
      return false
   } 
+  
+  
   
   //card root  element 
   const card = document.createElement('div')
@@ -55,7 +56,7 @@ addnowButtum.addEventListener('click', function(e) {
   cardbody.appendChild(privewElement)
 
   
-
+  console.log(dataStroe)
 
   
   
@@ -67,6 +68,7 @@ addnowButtum.addEventListener('click', function(e) {
     e.preventDefault();
   
 })
+
 
 //remove button action function
 cards.addEventListener('click', function(e) {
